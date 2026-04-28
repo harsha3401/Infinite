@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFINITE - Software Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="Gemini_Generated_Image_13cxcr13cxcr13cx.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,7 +23,11 @@
                             dark: '#0A1628',
                             orange: '#FF6B35',
                             yellow: '#FFD23F',
-                            navy: '#0F2A4A'
+                            navy: '#0F2A4A',
+                            'brand-dark': '#0f172a',
+                        'brand-blue': '#3b82f6',
+                        'brand-orange': '#f97316',
+                        'brand-yellow': '#eab308',
                         }
                     },
                     animation: {
@@ -37,6 +43,122 @@
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #f97316 50%, #eab308 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .carousel-card {
+            flex: 0 0 calc(33.333% - 1.33rem);
+            min-width: 300px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .carousel-card.active {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        .carousel-card:not(.active) {
+            opacity: 0.6;
+            transform: scale(0.95);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #eab308;
+        }
+        
+        .noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .reveal {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .reveal-delay-1 { animation-delay: 0.1s; }
+        .reveal-delay-2 { animation-delay: 0.2s; }
+        .reveal-delay-3 { animation-delay: 0.3s; }
+        
+        @media (max-width: 1024px) {
+            .carousel-card {
+                flex: 0 0 calc(50% - 1rem);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .carousel-card {
+                flex: 0 0 100%;
+            }
+        }
+        
+        .nav-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(234, 179, 8, 0.2);
+            border-color: #eab308;
+            transform: scale(1.1);
+        }
+        
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .dot {
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #eab308;
+            width: 2rem;
+        }
+        
+        .member-img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .member-img-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, #0f172a 0%, transparent 100%);
+            pointer-events: none;
         }
         
         .gradient-text {
@@ -259,7 +381,7 @@
                     <div class="text-sm text-gray-400 mt-1">Happy Clients</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold gradient-text counter" data-target="25">0</div>
+                    <div class="text-3xl md:text-4xl font-bold gradient-text counter" data-target="8">0</div>
                     <div class="text-sm text-gray-400 mt-1">Team Members</div>
                 </div>
                 <div class="text-center">
@@ -435,86 +557,311 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="relative py-32 noise">
+     <section id="portfolio" class="relative py-32 noise">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
             <div class="text-center mb-20 reveal">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
-                    <span class="text-sm font-medium text-brand-yellow">Our Work</span>
+                    <span class="text-sm font-medium text-brand-yellow">Our Team</span>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    Featured <span class="gradient-text">Projects</span>
+                    Director <span class="gradient-text">Board</span>
                 </h2>
                 <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-                    Explore our latest work and see how we've helped businesses transform their digital presence.
+                    Meet the visionary leaders driving innovation and shaping the future of our digital solutions.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="reveal group relative overflow-hidden rounded-2xl">
-                    <div class="aspect-[4/3] bg-gradient-to-br from-brand-blue/20 to-brand-orange/20 flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-blue/20 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                </svg>
+            <!-- Carousel Container -->
+            <div class="relative">
+                <!-- Navigation Buttons -->
+                <button id="prevBtn" class="nav-btn absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-14 h-14 rounded-full glass flex items-center justify-center border border-white/10 hover:border-brand-yellow/50">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                
+                <button id="nextBtn" class="nav-btn absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-14 h-14 rounded-full glass flex items-center justify-center border border-white/10 hover:border-brand-yellow/50">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                
+                <!-- Carousel Track -->
+                <div class="overflow-hidden px-4">
+                    <div id="carouselTrack" class="carousel-track">
+                        <!-- Member 1 -->
+                        <div class="carousel-card active group" data-index="0">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-blue/10 to-brand-orange/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/chamika.jpeg" 
+                                         alt="Chamika Shehan" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Chamika Shehan</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Chief Executive Officer</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-twitter text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Visionary leader with 15+ years in fintech innovation, driving strategic growth and digital transformation across global markets.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold">FinTech Dashboard</h3>
-                            <p class="text-sm text-gray-400 mt-2">Real-time analytics platform</p>
                         </div>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">FinTech Dashboard</h3>
-                            <p class="text-gray-300 text-sm">Advanced real-time financial analytics with AI-powered insights and predictive modeling.</p>
+                        
+                        <!-- Member 2 -->
+                        <div class="carousel-card group" data-index="1">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-orange/10 to-brand-yellow/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/Dewmina.jpeg" 
+                                         alt="Sahan Dewmina" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Sahan Dewmina</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Member</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-github text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Tech pioneer specializing in AI/ML architectures, building scalable platforms that power next-generation digital experiences.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Member 3 -->
+                        <div class="carousel-card group" data-index="2">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-yellow/10 to-green-500/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/Ishan.jpeg" 
+                                         alt="Ishan Prabashwara" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Ishan Prabashwara</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Member</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-dribbble text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Award-winning design strategist crafting intuitive user experiences that bridge aesthetics with cutting-edge functionality.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Member 4 -->
+                        <div class="carousel-card group" data-index="3">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 to-brand-blue/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/Harsha.jpg" 
+                                         alt="Harsha Sandun" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Harsha Sandun</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Member</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-github text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Engineering excellence advocate with deep expertise in distributed systems, cloud infrastructure, and agile team leadership.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Member 5 -->
+                        <div class="carousel-card group" data-index="4">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-500/10 to-brand-orange/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/Akshan.jpeg" 
+                                         alt="InduwaraAkshan" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Induwara Akshan</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Member</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-twitter text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Product visionary translating market insights into compelling product roadmaps that deliver measurable business impact.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Member 6 -->
+                        <div class="carousel-card group" data-index="5">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-500/10 to-brand-blue/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/Sanduli.jpeg" 
+                                         alt="Tharinsa Sanduli" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Tharinsa Sanduli</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Member</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-instagram text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Growth strategist leveraging data-driven marketing to build brands that resonate and communities that thrive globally.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 7 -->
+                        <div class="carousel-card group" data-index="6">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-500/10 to-brand-blue/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/Amandi.png" 
+                                         alt="Amandi Imesha" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Amandi Imesha</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Member</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-instagram text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Growth strategist leveraging data-driven marketing to build brands that resonate and communities that thrive globally.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member 8 -->
+                        <div class="carousel-card group" data-index="7">
+                            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-500/10 to-brand-blue/10 border border-white/5 hover:border-brand-yellow/30 transition-all duration-500">
+                                <div class="member-img-wrapper aspect-[3/4]">
+                                    <img src="Images/Rebeka.jpeg" 
+                                         alt="Rebeka Deva" 
+                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                    <div class="flex items-end justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white mb-1">Rebeka Deva</h3>
+                                            <p class="text-brand-yellow text-sm font-medium">Member</p>
+                                        </div>
+                                        <div class="flex gap-3">
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-linkedin text-lg"></i>
+                                            </a>
+                                            <a href="#" class="social-icon text-gray-400 hover:text-brand-yellow">
+                                                <i class="fab fa-instagram text-lg"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <p class="text-gray-300 text-sm leading-relaxed">
+                                            Growth strategist leveraging data-driven marketing to build brands that resonate and communities that thrive globally.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="reveal group relative overflow-hidden rounded-2xl" style="transition-delay: 100ms">
-                    <div class="aspect-[4/3] bg-gradient-to-br from-brand-orange/20 to-brand-yellow/20 flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-orange/20 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold">E-Commerce Platform</h3>
-                            <p class="text-sm text-gray-400 mt-2">Next-gen shopping experience</p>
-                        </div>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
-                            <p class="text-gray-300 text-sm">Scalable marketplace with AI recommendations, AR product preview, and seamless checkout.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="reveal group relative overflow-hidden rounded-2xl" style="transition-delay: 200ms">
-                    <div class="aspect-[4/3] bg-gradient-to-br from-brand-yellow/20 to-green-500/20 flex items-center justify-center">
-                        <div class="text-center p-8">
-                            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-yellow/20 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold">HealthTech App</h3>
-                            <p class="text-sm text-gray-400 mt-2">Patient care management</p>
-                        </div>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">HealthTech App</h3>
-                            <p class="text-gray-300 text-sm">HIPAA-compliant telemedicine platform with real-time monitoring and AI diagnostics.</p>
-                        </div>
-                    </div>
+                <!-- Dots Navigation -->
+                <div class="flex justify-center gap-2 mt-10">
+                    <button class="dot active w-3 h-3 rounded-full bg-white/30" data-index="0"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-white/30" data-index="1"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-white/30" data-index="2"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-white/30" data-index="3"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-white/30" data-index="4"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-white/30" data-index="5"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-white/30" data-index="6"></button>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Tech Stack Section -->
     <section class="relative py-32 overflow-hidden">
@@ -682,6 +1029,159 @@
     </footer>
 
     <script>
+        const track = document.getElementById('carouselTrack');
+        const cards = document.querySelectorAll('.carousel-card');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot');
+        
+        let currentIndex = 0;
+        const totalCards = cards.length;
+        let autoPlayInterval;
+        
+        function getVisibleCount() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 640) return 2;
+            return 1;
+        }
+        
+        function getMaxIndex() {
+            return totalCards - getVisibleCount();
+        }
+        
+        function updateCarousel() {
+            const visibleCount = getVisibleCount();
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 32; // 2rem gap
+            const offset = currentIndex * (cardWidth + gap);
+            
+            track.style.transform = `translateX(-${offset}px)`;
+            
+            // Update active states
+            cards.forEach((card, i) => {
+                card.classList.remove('active');
+                if (i >= currentIndex && i < currentIndex + visibleCount) {
+                    card.classList.add('active');
+                }
+            });
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+            
+            // Update button states
+            prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '1';
+            prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+            nextBtn.style.opacity = currentIndex >= getMaxIndex() ? '0.3' : '1';
+            nextBtn.style.pointerEvents = currentIndex >= getMaxIndex() ? 'none' : 'auto';
+        }
+        
+        function goToSlide(index) {
+            const maxIndex = getMaxIndex();
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            updateCarousel();
+        }
+        
+        function nextSlide() {
+            const maxIndex = getMaxIndex();
+            if (currentIndex < maxIndex) {
+                goToSlide(currentIndex + 1);
+            } else {
+                goToSlide(0);
+            }
+        }
+        
+        function prevSlide() {
+            if (currentIndex > 0) {
+                goToSlide(currentIndex - 1);
+            } else {
+                goToSlide(getMaxIndex());
+            }
+        }
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        // Event Listeners
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoPlay();
+            startAutoPlay();
+        });
+        
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+                stopAutoPlay();
+                startAutoPlay();
+            });
+        });
+        
+        // Pause on hover
+        track.addEventListener('mouseenter', stopAutoPlay);
+        track.addEventListener('mouseleave', startAutoPlay);
+        
+        // Handle resize
+        window.addEventListener('resize', () => {
+            const maxIndex = getMaxIndex();
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            updateCarousel();
+        });
+        
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoPlay();
+        }, { passive: true });
+        
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            startAutoPlay();
+        }, { passive: true });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        });
+        
+        // Initialize
+        updateCarousel();
+        startAutoPlay();
+
+
         // Particle System
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
@@ -935,4 +1435,11 @@
         });
     </script>
 </body>
-</html>
+</html>'''
+
+# Save the file
+with open('/mnt/agents/output/infinite_website.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("Website created successfully!")
+print(f"File size: {len(html_content)} characters")
